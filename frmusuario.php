@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-sm-3">
                     <p>&nbsp;</p>
-                    <button class="btn btn-primary" type="submit" formaction="frmUsuario.php" name="Pesquisar">&#128269;</button>
+                    <button class="btn btn-primary" type="submit" formaction="Pesquisar_Usuario.php" name="Pesquisar">&#128269;</button>
                 </div>
                 <div class="col-sm-6">
                     <p>
