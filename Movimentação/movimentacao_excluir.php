@@ -1,15 +1,10 @@
 <?php
-
 if (isset($_POST['Excluir'])) {
-
-    include_once('conexao.php');
-
+    include_once('../conexao.php');
     try {
-
-        $sql = $conn->prepare('DELETE FROM funcionario WHERE ID_Funcionario = :id_Funcionario');
-
+        $sql = $conn->prepare('DELETE FROM movimentacao WHERE id_mov = :id_mov');
         $sql->execute(array(
-            ':id_Funcionario' => $_POST['ID_Funcionario']
+            ':id_mov' => $_POST['id_mov']
         ));
 
         if ($sql->rowCount() > 0) {
@@ -19,5 +14,4 @@ if (isset($_POST['Excluir'])) {
         echo $erro->getMessage();
     }
 }
-
 ?>

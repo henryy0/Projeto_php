@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Usuário</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="css/estilo.css">
-    <script src="js/bootstrap.js"></script>
 </head>
 <body>
-    <?php include_once('cadastro_usuario.php'); ?>
+    <?php include_once('cadastro_usuario.php'); ?> 
+    <?php include_once('alterar_usuario.php'); ?>
+    <?php include_once('excluir_usuario.php'); ?>
+    <?php include_once('Pesquisar_usuario.php'); ?>
     <div class="container">
         <form action="" method="post" class="form-control">
             <div class="row">
@@ -31,7 +33,7 @@
                 <div class="col-sm-6">
                     <p>
                         <label for="nome_usuario">Nome do Usuário</label>
-                        <input type="text" id="nome_usuario" name="nome_usuario" class="form-control" value="<?= $nome_usuario ?>">
+                        <input type="text" id="nome_usuario" name="Nome" class="form-control" value="<?= $nome_Usuario ?>">
                     </p>
                 </div>
             </div>
@@ -39,13 +41,13 @@
                 <div class="col-sm-4">
                     <p>
                         <label for="login_usuario">Login</label>
-                        <input type="text" id="login_usuario" name="login_usuario" class="form-control" value="<?= $login_usuario ?>">
+                        <input type="text" id="login_usuario" name="Login" class="form-control" value="<?= $login_Usuario ?>">
                     </p>
                 </div>
                 <div class="col-sm-4">
                     <p>
                         <label for="senha_usuario">Senha</label>
-                        <input type="password" id="senha_usuario" name="senha_usuario" class="form-control">
+                        <input type="password" id="senha_usuario" name="Senha" class="form-control">
                     </p>
                 </div>
                 <div class="col-sm-4">
@@ -59,15 +61,15 @@
                 <div class="col-sm-6">
                     <p>
                         <label for="obs_usuario">Observação</label>
-                        <input type="text" id="obs_usuario" name="obs_usuario" class="form-control" value="<?= $obs_usuario ?>">
+                        <input type="text" id="obs_usuario" name="Observacao" class="form-control" value="<?= $obs_Usuario ?>">
                     </p>
                 </div>
                 <div class="col-sm-6">
                     <p>
                         <label for="status_usuario">Status</label>
                         <select name="status_usuario" id="status_usuario" class="form-control">
-                            <option value="ATIVO" <?=($status_usuario=='ATIVO')?'selected':'';?>>Ativo</option>
-                            <option value="INATIVO" <?=($status_usuario=='INATIVO')?'selected':'';?>>Inativo</option>
+                            <option value="ATIVO" <?=($status_Usuario=='ATIVO')?'selected':'';?>>Ativo</option>
+                            <option value="INATIVO" <?=($status_Usuario=='INATIVO')?'selected':'';?>>Inativo</option>
                         </select>
                     </p>
                 </div>
@@ -82,5 +84,7 @@
             </div>
         </form>
     </div>
+
+        <script src="../js/bootstrap.js"></script>
 </body>
 </html>
