@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['Cadastrar'])) {
     try {
-        include_once('../conexao.php');
+        include_once('conexao.php');
 
         $sql = $conn->prepare('INSERT INTO OS (id_produto_os, qtde_os, obs_os, status_os) VALUES (:id_produto_os, :qtde_os, :obs_os, :status_os)');
 

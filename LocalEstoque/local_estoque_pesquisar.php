@@ -6,7 +6,7 @@ $obs_LocalEstoque = "";
 $status_LocalEstoque = "";
 
 if (isset($_POST['Pesquisar'])) {
-    include_once('../conexao.php');
+    include_once('conexao.php');
     
     try {
         $sql = $conn->query('SELECT * FROM LocalEstoque WHERE id_LocalEstoque=' . $_POST['ID_LocalEstoque']);

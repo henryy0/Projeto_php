@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <?php include_once('movimentacao_cadastrar.php'); ?>
-    <?php include_once('movimentacao_alterar.php'); ?>
-    <?php include_once('movimentacao_excluir.php'); ?>
-    <?php include_once('movimentacao_pesquisar.php'); ?>
+    <?php 
+    include_once('movimentacao_cadastrar.php'); 
+    include_once('movimentacao_alterar.php'); 
+    include_once('movimentacao_excluir.php'); 
+    include_once('movimentacao_pesquisar.php'); 
+    include_once('combox.php'); 
+    ?>
     <div class="container">
         <form action="" method="post" class="form-control">
             <div class="row">
@@ -25,7 +28,9 @@
                         <label for="id_Produto_mov">ID do Produto</label>
                     </p>
                     <p>
-                        <input type="number" id="id_Produto_mov" name="id_Produto_mov" class="form-control" value="<?= $id_Produto_mov ?>">
+                    <select id="id_Produto_mov" name="id_Produto_mov" class="form-control" readonly>
+                        <?php carregarComboBox($conexao, 'produtos'); ?>
+                    </select>
                     </p>
                 </div>
                 <div class="col-sm-4">
@@ -33,7 +38,9 @@
                         <label for="id_Funcionario_mov">ID do Funcionário</label>
                     </p>
                     <p>
-                        <input type="number" id="id_Funcionario_mov" name="id_Funcionario_mov" class="form-control" value="<?= $id_Funcionario_mov ?>">
+                    <select id="id_Funcionario_mov" name="id_Funcionario_mov" class="form-control" readonly>
+                        <?php carregarComboBox($conexao, 'funcionarios'); ?>
+                    </select>
                     </p>
                 </div>
                 <div class="col-sm-4">
@@ -51,40 +58,38 @@
                         <label for="tipo_mov">Tipo de Movimentação</label>
                     </p>
                     <p>
-                        <select name="tipo_mov" id="tipo_mov" class="form-control">
+                        <select name="tipo_mov" id="tipo_mov" class="form-control" readonly>
                             <option value="Entrada" <?= ($tipo_mov == 'Entrada') ? 'selected' : '' ?>>Entrada</option>
                             <option value="Saída" <?= ($tipo_mov == 'Saída') ? 'selected' : '' ?>>Saída</option>
                         </select>
                     </p>
                 </div>
-                <div class="col-sm-8">
-                    <p>
-                        <label for="obs_mov">Observação</label>
-                    </p>
-                    <p>
-                        <textarea id="obs_mov" name="obs_mov" rows="3" class="form-control"><?= $obs_mov ?></textarea>
-                    </p>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-sm-4">
                     <p>
                         <label for="status_mov">Status</label>
                     </p>
                     <p>
-                        <select name="status_mov" id="status_mov" class="form-control">
+                        <select name="status_mov" id="status_mov" class="form-control" readonly>
                             <option value="Ativo" <?= ($status_mov == 'Ativo') ? 'selected' : '' ?>>Ativo</option>
                             <option value="Inativo" <?= ($status_mov == 'Inativo') ? 'selected' : '' ?>>Inativo</option>
                         </select>
                     </p>
                 </div>
             </div>
+            <div class="col-sm-12">
+                <p>
+                    <label for="obs_mov">Observação</label>
+                </p>
+                <p>
+                    <textarea id="obs_mov" name="obs_mov" rows="6" class="form-control"><?= $obs_mov ?></textarea>
+                </p>
+            </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="movimentacao_cadastrar.php">Cadastrar</button>
-                    <button name="Alterar" class="btn btn-success" formaction="movimentacao_alterar.php">Alterar</button>
-                    <a href="frmMovimentacao.php" class="btn btn-secondary">Limpar</a>
-                    <button name="Excluir" class="btn btn-danger" formaction="movimentacao_excluir.php">Excluir</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=mov">Cadastrar</button>
+                    <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=mov">Alterar</button>
+                    <a href="Sistema.php?tela=mov" class="btn btn-secondary">Limpar</a>
+                    <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=mov">Excluir</button>
                 </div>
             </div>
         </form>

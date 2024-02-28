@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-sm-3">
                     <p>&nbsp;</p>
-                    <button class="btn btn-primary" type="submit" formaction="Pesquisar_Usuario.php" name="Pesquisar">&#128269;</button>
+                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=usuario" name="Pesquisar">&#128269;</button>
                 </div>
                 <div class="col-sm-6">
                     <p>
@@ -58,33 +58,34 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
-                    <p>
-                        <label for="obs_usuario">Observação</label>
-                        <input type="text" id="obs_usuario" name="Observacao" class="form-control" value="<?= $obs_Usuario ?>">
-                    </p>
-                </div>
+                
                 <div class="col-sm-6">
                     <p>
                         <label for="status_usuario">Status</label>
-                        <select name="status_usuario" id="status_usuario" class="form-control">
+                        <select name="Status" id="Status" class="form-control" readonly>
                             <option value="ATIVO" <?=($status_Usuario=='ATIVO')?'selected':'';?>>Ativo</option>
                             <option value="INATIVO" <?=($status_Usuario=='INATIVO')?'selected':'';?>>Inativo</option>
                         </select>
                     </p>
                 </div>
             </div>
+            <div class="col-sm-12">
+                <p>
+                    <label for="obs_usuario">Observação</label>
+                    <textarea id="obs_usuario" name="Observacao" rows="5" class="form-control"><?= $obs_Usuario ?></textarea>
+                </p>
+            </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="cadastro_usuario.php">Cadastrar</button>
-                    <button name="Alterar" class="btn btn-success" formaction="alterar_usuario.php">Alterar</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=usuario">Cadastrar</button>
+                    <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=usuario">Alterar</button>
                     <a href="frmUsuario.php" class="btn btn-secondary">Limpar</a>
-                    <button name="Excluir" class="btn btn-danger" formaction="excluir_usuario.php">Excluir</button>
+                    <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=usuario">Excluir</button>
                 </div>
             </div>
         </form>
     </div>
 
-        <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap.js"></script>
 </body>
 </html>

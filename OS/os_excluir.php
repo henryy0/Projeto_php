@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['Excluir'])) {
-    include_once('../conexao.php');
+    include_once('conexao.php');
     try {
         $sql = $conn->prepare('DELETE FROM OS WHERE id_os = :id_os');
 

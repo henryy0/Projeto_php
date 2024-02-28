@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-sm-3">
                     <p>&nbsp;</p>
-                    <button class="btn btn-primary" type="submit" formaction="frmFornecedor.php" name="Pesquisar">&#128269;</button>
+                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=fornecedor" name="Pesquisar">&#128269;</button>
                 </div>
             </div>
             <div class="row">
@@ -117,7 +117,35 @@
                         <label for="uf_Fornecedor">UF</label>
                     </p>
                     <p>
-                        <input type="text" id="uf_Fornecedor" name="UF" class="form-control" value="<?= $uf_Fornecedor ?>">
+                        <select id="uf_Fornecedor" name="UF" class="form-control" readonly>
+                            <option value="AC" <?=($uf_Fornecedor=='AC')?'selected':'';?>>Acre</option>
+                            <option value="AL" <?=($uf_Fornecedor=='AL')?'selected':'';?>>Alagoas</option>
+                            <option value="AP" <?=($uf_Fornecedor=='AP')?'selected':'';?>>Amapá</option>
+                            <option value="AM" <?=($uf_Fornecedor=='AM')?'selected':'';?>>Amazonas</option>
+                            <option value="BA" <?=($uf_Fornecedor=='BA')?'selected':'';?>>Bahia</option>
+                            <option value="CE" <?=($uf_Fornecedor=='CE')?'selected':'';?>>Ceará</option>
+                            <option value="DF" <?=($uf_Fornecedor=='DF')?'selected':'';?>>Distrito Federal</option>
+                            <option value="ES" <?=($uf_Fornecedor=='ES')?'selected':'';?>>Espírito Santo</option>
+                            <option value="GO" <?=($uf_Fornecedor=='GO')?'selected':'';?>>Goiás</option>
+                            <option value="MA" <?=($uf_Fornecedor=='MA')?'selected':'';?>>Maranhão</option>
+                            <option value="MT" <?=($uf_Fornecedor=='MT')?'selected':'';?>>Mato Grosso</option>
+                            <option value="MS" <?=($uf_Fornecedor=='MS')?'selected':'';?>>Mato Grosso do Sul</option>
+                            <option value="MG" <?=($uf_Fornecedor=='MG')?'selected':'';?>>Minas Gerais</option>
+                            <option value="PA" <?=($uf_Fornecedor=='PA')?'selected':'';?>>Pará</option>
+                            <option value="PB" <?=($uf_Fornecedor=='PB')?'selected':'';?>>Paraíba</option>
+                            <option value="PR" <?=($uf_Fornecedor=='PR')?'selected':'';?>>Paraná</option>
+                            <option value="PE" <?=($uf_Fornecedor=='PE')?'selected':'';?>>Pernambuco</option>
+                            <option value="PI" <?=($uf_Fornecedor=='PI')?'selected':'';?>>Piauí</option>
+                            <option value="RJ" <?=($uf_Fornecedor=='RJ')?'selected':'';?>>Rio de Janeiro</option>
+                            <option value="RN" <?=($uf_Fornecedor=='RN')?'selected':'';?>>Rio Grande do Norte</option>
+                            <option value="RS" <?=($uf_Fornecedor=='RS')?'selected':'';?>>Rio Grande do Sul</option>
+                            <option value="RO" <?=($uf_Fornecedor=='RO')?'selected':'';?>>Rondônia</option>
+                            <option value="RR" <?=($uf_Fornecedor=='RR')?'selected':'';?>>Roraima</option>
+                            <option value="SC" <?=($uf_Fornecedor=='SC')?'selected':'';?>>Santa Catarina</option>
+                            <option value="SP" <?=($uf_Fornecedor=='SP')?'selected':'';?>>São Paulo</option>
+                            <option value="SE" <?=($uf_Fornecedor=='SE')?'selected':'';?>>Sergipe</option>
+                            <option value="TO" <?=($uf_Fornecedor=='TO')?'selected':'';?>>Tocantins</option>
+                        </select>
                     </p>
                 </div>
             </div>
@@ -166,29 +194,32 @@
                 </div>
                 <div class="col-sm-6">
                     <p>
-                        <label for="obs_Fornecedor">Observação</label>
+                        <label for="status_Fornecedor">Status</label>
                     </p>
                     <p>
-                        <input type="text" id="obs_Fornecedor" name="Observacao" class="form-control" value="<?= $obs_Fornecedor ?>">
+                        <select id="status_Fornecedor" name="Status" class="form-control" readonly>
+                            <option value="ATIVO" <?=($status_Fornecedor=='ATIVO')?'selected':'';?>>ATIVO</option>
+                            <option value="INATIVO" <?=($status_Fornecedor=='INATIVO')?'selected':'';?>>INATIVO</option>
+                        </select>
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
                     <p>
-                        <label for="status_Fornecedor">Status</label>
+                        <label for="obs_Fornecedor">Observação</label>
                     </p>
                     <p>
-                        <input type="text" id="status_Fornecedor" name="Status" class="form-control" value="<?= $status_Fornecedor ?>">
+                        <textarea id="obs_Fornecedor" name="Observacao" rows="5" class="form-control"><?= $obs_Fornecedor ?></textarea>
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="fornecedor_cadastrar.php">Cadastrar</button>
-                    <button name="Alterar" class="btn btn-success" formaction="fornecedor_alterar.php">Alterar</button>
-                    <a href="frmFornecedor.php" class="btn btn-secondary">Limpar</a>
-                    <button name="Excluir" class="btn btn-danger" formaction="fornecedor_excluir.php">Excluir</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=fornecedor">Cadastrar</button>
+                    <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=fornecedor">Alterar</button>
+                    <a href="Sistema.php?tela=fornecedor" class="btn btn-secondary">Limpar</a>
+                    <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=fornecedor">Excluir</button>
                 </div>
             </div>
         </form>

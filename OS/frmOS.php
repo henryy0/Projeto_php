@@ -69,10 +69,10 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="os_cadastrar.php">Cadastrar</button>
-                    <button name="Alterar" class="btn btn-success" formaction="os_alterar.php">Alterar</button>
-                    <a href="frmOS.php" class="btn btn-secondary">Limpar</a>
-                    <button name="Excluir" class="btn btn-danger" formaction="os_excluir.php">Excluir</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=os">Cadastrar</button>
+                    <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=os">Alterar</button>
+                    <a href="Sistema.php?tela=os" class="btn btn-secondary">Limpar</a>
+                    <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=os">Excluir</button>
                 </div>
             </div>
         </form>

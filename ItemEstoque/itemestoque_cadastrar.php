@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['Cadastrar'])) {
     try {
-        include_once('../conexao.php');
+        include_once('conexao.php');
         $sql = $conn->prepare(
             'INSERT INTO ItemEstoque
             (id_produto_ItemEstoque, id_localEstoque_ItemEstoque, obs_os, status_os)

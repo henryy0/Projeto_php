@@ -6,7 +6,7 @@ $obs_os = "";
 $status_os = "";
 
 if (isset($_POST['Pesquisar'])) {
-    include_once('../conexao.php');
+    include_once('conexao.php');
 
     try {
         $sql = $conn->query('SELECT * FROM ItemEstoque WHERE id_ItemEstoque=' . $_POST['id_ItemEstoque']);

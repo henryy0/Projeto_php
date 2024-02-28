@@ -26,11 +26,22 @@
                     </p>
                     <p>
                         <input type="number" id="ID_LocalEstoque" name="ID_LocalEstoque" class="form-control" value="<?= $ID_LocalEstoque ?>">
-                    </p>
+                    </p>      
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-6">
                     <p>&nbsp;</p>
                     <button class="btn btn-primary" type="submit" formaction="frmLocalEstoque.php" name="Pesquisar">&#128269;</button>
+                </div>
+                <div class="col-sm-3">
+                    <p>
+                        <label for="status_LocalEstoque">Status</label>
+                    </p>
+                    <p>
+                        <select name="Status" id="status_LocalEstoque" class="form-control" readonly>
+                            <option value="Ativo" <?= ($status_LocalEstoque == 'Ativo') ? 'selected' : '' ?>>Ativo</option>
+                            <option value="Inativo" <?= ($status_LocalEstoque == 'Inativo') ? 'selected' : '' ?>>Inativo</option>
+                        </select>
+                    </p>
                 </div>
             </div>
             <div class="row">
@@ -54,24 +65,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
-                    <p>
-                        <label for="status_LocalEstoque">Status</label>
-                    </p>
-                    <p>
-                        <select name="Status" id="status_LocalEstoque" class="form-control">
-                            <option value="Ativo" <?= ($status_LocalEstoque == 'Ativo') ? 'selected' : '' ?>>Ativo</option>
-                            <option value="Inativo" <?= ($status_LocalEstoque == 'Inativo') ? 'selected' : '' ?>>Inativo</option>
-                        </select>
-                    </p>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="local_estoque_cadastrar.php">Cadastrar</button>
-                    <button name="Alterar" class="btn btn-success" formaction="local_estoque_alterar.php">Alterar</button>
-                    <a href="frmLocalEstoque.php" class="btn btn-secondary">Limpar</a>
-                    <button name="Excluir" class="btn btn-danger" formaction="local_estoque_excluir.php">Excluir</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=local">Cadastrar</button>
+                    <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=local">Alterar</button>
+                    <a href="Sistema.php?tela=local" class="btn btn-secondary">Limpar</a>
+                    <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=local">Excluir</button>
                 </div>
             </div>
         </form>

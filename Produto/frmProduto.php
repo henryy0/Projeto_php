@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-sm-3">
                     <p>&nbsp;</p>
-                    <button class="btn btn-primary" type="submit" formaction="pesquisar_produto.php" name="Pesquisar">&#128269;</button>
+                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=produto" name="Pesquisar">&#128269;</button>
                 </div>
                 <div class="col-sm-6">
                     <p>
@@ -60,31 +60,30 @@
             <div class="row">
                 <div class="col-sm-6">
                     <p>
-                        <label for="obs_produto">Observação</label>
-                        <input type="text" id="obs_produto" name="Observacao" class="form-control" value="<?= $obs_Produto ?>">
-                    </p>
-                </div>
-                <div class="col-sm-6">
-                    <p>
-                        <label for="status_produto">Status</label>
-                        <select name="status_produto" id="status_produto" class="form-control">
+                        <label for="Status">Status</label>
+                        <select name="Status" id="Status" class="form-control" readonly>
                             <option value="ATIVO" <?=($status_Produto=='ATIVO')?'selected':'';?>>Ativo</option>
                             <option value="INATIVO" <?=($status_Produto=='INATIVO')?'selected':'';?>>Inativo</option>
                         </select>
                     </p>
                 </div>
-            </div>
+                <div class="col-sm-12">
+    <p>
+        <label for="obs_produto">Observação</label>
+        <textarea id="obs_produto" name="Observacao" class="form-control" rows="5"><?= $obs_Produto ?></textarea>
+    </p>
+</div>
+
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="cadastro_produto.php">Cadastrar</button>
-                    <button name="Alterar" class="btn btn-success" formaction="alterar_produto.php">Alterar</button>
-                    <a href="frmProduto.php" class="btn btn-secondary">Limpar</a>
-                    <button name="Excluir" class="btn btn-danger" formaction="excluir_produto.php">Excluir</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=produto">Cadastrar</button>
+                    <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=produto">Alterar</button>
+                    <a href="Sistema.php?tela=produto" class="btn btn-secondary">Limpar</a>
+                    <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=produto">Excluir</button>
                 </div>
             </div>
         </form>
     </div>
-
     <script src="../js/bootstrap.js"></script>
 </body>
 </html>

@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-sm-3">
                     <p>&nbsp;</p>
-                    <button class="btn btn-primary" type="submit" formaction="frmFuncionario.php" name="Pesquisar">&#128269;</button>
+                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=funcionario" name="Pesquisar">&#128269;</button>
                 </div>
                 <div class="col-sm-3">
                     <p>
@@ -212,16 +212,16 @@
                         <label for="obs_Funcionario">Observação</label>
                     </p>
                     <p>
-                        <textarea id="Observacao" name="Obs" rows="5" class="form-control"><?= $obs_Funcionario ?></textarea>
+                        <textarea id="Observacao" name="Observacao" rows="5" class="form-control"><?= $obs_Funcionario ?></textarea>
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="funcionario_cadastrar.php">Cadastrar</button>
-                    <button name="Alterar" class="btn btn-success" formaction="funcionario_alterar.php">Alterar</button>
-                    <a href="frmFuncionario.php" class="btn btn-secondary">Limpar</a>
-                    <button name="Excluir" class="btn btn-danger" formaction="funcionario_excluir.php">Excluir</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=funcionario">Cadastrar</button>
+                    <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=funcionario">Alterar</button>
+                    <a href="Sistema.php?tela=funcionario" class="btn btn-secondary">Limpar</a>
+                    <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=funcionario">Excluir</button>
                 </div>
             </div>
         </form>

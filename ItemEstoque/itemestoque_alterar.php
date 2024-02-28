@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['Alterar'])) {
     try {
-        include_once('../conexao.php');
+        include_once('conexao.php');
         $sql = $conn->prepare(
             'UPDATE ItemEstoque SET
             id_produto_ItemEstoque = :id_produto_ItemEstoque,

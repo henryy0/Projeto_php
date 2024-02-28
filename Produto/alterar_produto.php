@@ -19,7 +19,7 @@ if (isset($_POST['Alterar'])) {
             ':vcusto_produto' => $_POST['Vcusto'],
             ':vvenda_produto' => $_POST['Vvenda'],
             ':obs_produto' => $_POST['Observacao'],
-            ':status_produto' => $_POST['status_produto']
+            ':status_produto' => $_POST['Status']
         ));
         if ($sql->rowCount() > 0) {
             echo '<p> Produto alterado com sucesso</p>' . $sql->rowCount();

@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['Alterar'])) {
     try {
-        include_once('../conexao.php');
+        include_once('conexao.php');
         $sql = $conn->prepare(
             'UPDATE movimentacao SET
             id_Produto_mov = :id_Produto_mov,
@@ -30,5 +30,7 @@ if (isset($_POST['Alterar'])) {
     } catch (PDOException $error) {
         echo $error->getMessage();
     }
+
+    
 };
 ?>

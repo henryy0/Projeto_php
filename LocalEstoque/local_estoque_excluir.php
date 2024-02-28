@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['Excluir'])) {
-    include_once('../conexao.php');
+    include_once('conexao.php');
     
     try {
         $sql = $conn->prepare('DELETE FROM LocalEstoque WHERE id_LocalEstoque = :id_LocalEstoque');

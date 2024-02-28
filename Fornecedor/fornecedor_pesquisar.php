@@ -21,7 +21,7 @@ $status_Fornecedor = "";
 
 if (isset($_POST['Pesquisar'])) {
 
-    include_once('../conexao.php');
+    include_once('conexao.php');
 
     try {
 

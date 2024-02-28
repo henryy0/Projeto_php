@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['Excluir'])) {
-    include_once('../conexao.php');
+    include_once('conexao.php');
     try {
         $sql = $conn->prepare('DELETE FROM ItemEstoque WHERE id_ItemEstoque = :id_ItemEstoque');
         $sql->execute(array(

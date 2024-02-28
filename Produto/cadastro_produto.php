@@ -3,7 +3,7 @@
 if (isset($_POST['Cadastrar'])) {
     try {
         // Inclua o arquivo de conexão com o banco de dados
-        include_once('../conexao.php');
+        include_once('conexao.php');
 
         // Preparar a consulta SQL para inserir um novo produto
         $sql = $conn->prepare(
@@ -17,8 +17,8 @@ if (isset($_POST['Cadastrar'])) {
         $sql->execute(array(
             ':nome_Produto' => $_POST['Nome'],
             ':qtde_Produto' => $_POST['Quantidade'],
-            ':Vcusto_Produto' => $_POST['ValorCusto'],
-            ':Vvenda_Produto' => $_POST['ValorVenda'],
+            ':Vcusto_Produto' => $_POST['Vcusto'],
+            ':Vvenda_Produto' => $_POST['Vvenda'],
             ':obs_Produto' => $_POST['Observacao'],
             ':status_Produto' => $_POST['Status'],
         ));

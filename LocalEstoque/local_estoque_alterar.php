@@ -2,7 +2,7 @@
 
 if (isset($_POST['Alterar'])) {
     try {
-        include_once('../conexao.php');
+        include_once('conexao.php');
         
         $sql = $conn->prepare('UPDATE LocalEstoque SET nome_LocalEstoque = :nome_LocalEstoque, obs_LocalEstoque = :obs_LocalEstoque, status_LocalEstoque = :status_LocalEstoque WHERE id_LocalEstoque = :id_LocalEstoque');
         

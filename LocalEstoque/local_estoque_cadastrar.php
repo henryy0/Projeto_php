@@ -2,7 +2,7 @@
 
 if (isset($_POST['Cadastrar'])) {
     try {
-        include_once('../conexao.php');
+        include_once('conexao.php');
         
         $sql = $conn->prepare('INSERT INTO LocalEstoque (nome_LocalEstoque, obs_LocalEstoque, status_LocalEstoque) VALUES (:nome_LocalEstoque, :obs_LocalEstoque, :status_LocalEstoque)');
         

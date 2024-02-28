@@ -8,7 +8,7 @@ $obs_mov = "";
 $status_mov = "";
 
 if (isset($_POST['Pesquisar'])) {
-    include_once('../conexao.php');
+    include_once('conexao.php');
 
     try {
         $sql = $conn->query('SELECT * FROM movimentacao WHERE id_mov=' . $_POST['id_mov']);
