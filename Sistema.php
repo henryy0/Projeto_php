@@ -13,13 +13,14 @@
 
     <div class="container">
         <div class="row">
-            <?php include_once("_topo.php"); ?>
+            <?php include_once("Body/_topo.php"); ?>
         </div>
     </div>
     <div class="container mb-3">
         <div class="row">
             <div class="col-sm-2">
-                <?php include_once("_menu.php"); ?>
+                <?php include_once("Body/_menu.php"); ?>
+                <?php include_once("Login/autenticar.php"); ?>
             </div>
             <div class="col-sm-10">
                 <?php
@@ -53,13 +54,13 @@
                             include_once("itemEstoque/frmitem.php");
                             break;
                         default:
-                            include_once("_home.php");
+                            include_once("Body/_home.php");
                             break;
                     }
                 }
                 else
                 {
-                    include_once("_home.php"); 
+                    include_once("Body/_home.php"); 
                 }
                 ?>
             </div>
@@ -67,7 +68,7 @@
     </div>
     <div class="container">
         <div class="row">
-        <?php include_once("_rodape.php"); ?>
+        <?php include_once("Body/_rodape.php"); ?>
         </div>
     </div>
     

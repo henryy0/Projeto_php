@@ -12,6 +12,7 @@
     <?php include_once('os_cadastrar.php'); ?>
     <?php include_once('os_excluir.php'); ?>
     <?php include_once('os_pesquisar.php'); ?>
+    <?php include_once('combox.php'); ?>
     <div class="container">
         <form action="" method="post" class="form-control">
             <div class="row">
@@ -25,7 +26,9 @@
                         <label for="id_produto_os">ID do Produto</label>
                     </p>
                     <p>
-                        <input type="number" id="id_produto_os" name="id_produto_os" class="form-control" value="<?= $id_produto_os ?>">
+                    <select id="id_produto_os" name="id_produto_os" class="form-control" readonly>
+                        <?php carregarComboBox($conexao, 'produtos'); ?>
+                    </select>
                     </p>
                 </div>
                 <div class="col-sm-3">
@@ -46,24 +49,22 @@
                 </div>
                 <div class="col-sm-3">
                     <p>
-                        <label for="obs_os">Observação</label>
-                    </p>
-                    <p>
-                        <textarea id="obs_os" name="obs_os" rows="3" class="form-control"><?= $obs_os ?></textarea>
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <p>
                         <label for="status_os">Status</label>
                     </p>
                     <p>
-                    <select id="status_os" name="status_os" class="form-control">
+                    <select id="status_os" name="status_os" class="form-control" readonly>
                         <option value="Aberta" <?= ($status_os == 'Aberta') ? 'selected' : '' ?>>Aberta</option>
                         <option value="Em andamento" <?= ($status_os == 'Em andamento') ? 'selected' : '' ?>>Em andamento</option>
                         <option value="Concluída" <?= ($status_os == 'Concluída') ? 'selected' : '' ?>>Concluída</option>
                     </select>
+                    </p>
+                </div>
+                <div class="col-sm-12">
+                    <p>
+                        <label for="obs_os">Observação</label>
+                    </p>
+                    <p>
+                        <textarea id="obs_os" name="obs_os" rows="3" class="form-control"><?= $obs_os ?></textarea>
                     </p>
                 </div>
             </div>

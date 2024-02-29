@@ -14,6 +14,9 @@ function carregarComboBox($conexao, $tipo) {
         case 'funcionarios':
             $sql = "SELECT ID_Funcionario, nome_Funcionario FROM funcionario";
             break;
+        case 'local':
+            $sql = "SELECT id_LocalEstoque, nome_LocalEstoque FROM LocalEstoque";
+            break;
         default:
             return; // Tipo inválido, retorna sem preencher a combobox
     }
@@ -26,6 +29,9 @@ function carregarComboBox($conexao, $tipo) {
             echo "<option value='" . $row['ID_Produto'] . "'>" . $row['nome_Produto'] . "</option>";
         } elseif ($tipo === 'funcionarios') {
             echo "<option value='" . $row['ID_Funcionario'] . "'>" . $row['nome_Funcionario'] . "</option>";
+        }
+        elseif ($tipo === 'local') {
+            echo "<option value='" . $row['id_LocalEstoque'] . "'>" . $row['nome_LocalEstoque'] . "</option>";
         }
     }
 }

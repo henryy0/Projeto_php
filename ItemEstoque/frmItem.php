@@ -12,6 +12,7 @@
     <?php include_once('itemestoque_cadastrar.php'); ?>
     <?php include_once('itemestoque_excluir.php'); ?>
     <?php include_once('itemestoque_pesquisar.php'); ?>
+    <?php include_once('combox.php'); ?>
     <div class="container">
         <form action="" method="post" class="form-control">
             <div class="row">
@@ -25,7 +26,9 @@
                         <label for="id_produto_ItemEstoque">ID Produto</label>
                     </p>
                     <p>
-                        <input type="number" id="id_produto_ItemEstoque" name="id_produto_ItemEstoque" class="form-control" value="<?= $id_produto_ItemEstoque ?>">
+                        <select id="id_produto_ItemEstoquev" name="id_produto_ItemEstoque" class="form-control"  value="<?= $id_produto_ItemEstoque ?>" readonly>
+                            <?php carregarComboBox($conexao, 'produtos'); ?>
+                        </select>
                     </p>
                 </div>
                 <div class="col-sm-4">
@@ -33,7 +36,20 @@
                         <label for="id_localEstoque_ItemEstoque">ID Local de Estoque</label>
                     </p>
                     <p>
-                        <input type="number" id="id_localEstoque_ItemEstoque" name="id_localEstoque_ItemEstoque" class="form-control" value="<?= $id_localEstoque_ItemEstoque ?>">
+                        <select id="id_localEstoque_ItemEstoque" name="id_localEstoque_ItemEstoque" class="form-control" readonly>
+                            <?php carregarComboBox($conexao, 'local'); ?>
+                        </select>
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <p>
+                        <label for="status_os">Status</label>
+                    </p>
+                    <p>
+                        <select name="status_os" id="status_os" class="form-control" readonly>
+                            <option value="Ativo" <?= ($status_os == 'Ativo') ? 'selected' : '' ?>>Ativo</option>
+                            <option value="Inativo" <?= ($status_os == 'Inativo') ? 'selected' : '' ?>>Inativo</option>
+                        </select>
                     </p>
                 </div>
             </div>
@@ -44,16 +60,6 @@
                     </p>
                     <p>
                         <textarea id="obs_os" name="obs_os" rows="5" class="form-control"><?= $obs_os ?></textarea>
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <p>
-                        <label for="status_os">Status</label>
-                    </p>
-                    <p>
-                        <input type="text" id="status_os" name="status_os" class="form-control" value="<?= $status_os ?>">
                     </p>
                 </div>
             </div>
