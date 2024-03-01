@@ -7,6 +7,7 @@ $senha_Usuario = "";
 $data_Usuario = "";
 $obs_Usuario = "";
 $status_Usuario = "";
+$img_Usuario = "";
 
 if (isset($_POST['Pesquisar'])) {
 
@@ -27,6 +28,7 @@ if (isset($_POST['Pesquisar'])) {
                 $data_Usuario = $linha[4];
                 $obs_Usuario = $linha[5];
                 $status_Usuario = $linha[6];
+                $img_Usuario  = $linha[7];
             }
         } else {
             echo '<p>Usuário não encontrado</p>';

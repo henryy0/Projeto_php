@@ -13,7 +13,7 @@
     <?php include_once('excluir_produto.php'); ?>
     <?php include_once('Pesquisar_produto.php'); ?>
     <div class="container">
-        <form action="" method="post" class="form-control">
+        <form action="" method="post" class="form-control" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-sm-12">
                     <h1>Formulário de Produto</h1>
@@ -30,7 +30,7 @@
                     <p>&nbsp;</p>
                     <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=produto" name="Pesquisar">&#128269;</button>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-3">
                     <p>
                         <label for="nome_produto">Nome do Produto</label>
                         <input type="text" id="nome_produto" name="Nome" class="form-control" value="<?= $nome_Produto ?>">
@@ -67,13 +67,22 @@
                         </select>
                     </p>
                 </div>
+                <div class="col-sm-3">
+                    <p>
+                        <label for="txtImg">Foto Produto</label>
+                        <input type="file" name="txtImg" id="txtImg" class="form-control" value="<?=$img_Produto?>">
+                    </p> 
+                </div>
+                <div class="col-sm-3">
+                    <img src="produtos/<?=$id_Produto?>/<?=$img_Produto?>" alt="" class="w-100">
+                </div>
+            </div>
                 <div class="col-sm-12">
-    <p>
-        <label for="obs_produto">Observação</label>
-        <textarea id="obs_produto" name="Observacao" class="form-control" rows="5"><?= $obs_Produto ?></textarea>
-    </p>
-</div>
-
+                    <p>
+                        <label for="obs_produto">Observação</label>
+                        <textarea id="obs_produto" name="Observacao" class="form-control" rows="5"><?= $obs_Produto ?></textarea>
+                    </p>
+                </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
                     <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=produto">Cadastrar</button>

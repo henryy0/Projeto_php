@@ -8,6 +8,7 @@ $Vcusto_Produto = "";
 $Vvenda_Produto = "";
 $obs_Produto = "";
 $status_Produto = "";
+$img_Produto = "";
 
 if (isset($_POST['Pesquisar'])) {
     try {
@@ -29,6 +30,7 @@ if (isset($_POST['Pesquisar'])) {
                 $Vvenda_Produto = $linha[5];
                 $obs_Produto = $linha[6];
                 $status_Produto = $linha[7];
+                $img_Produto = $linha[8];
             }
         } else {
             echo '<p>Produto não encontrado</p>';

@@ -32,6 +32,7 @@ CREATE TABLE usuario (
     data_usuario DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     obs_usuario VARCHAR(255) NULL,
     status_usuario VARCHAR(20) NOT NULL,
+    img_usuario VARCHAR(100) NOT NULL,
     PRIMARY KEY (id_usuario)
 );
 
@@ -44,6 +45,7 @@ CREATE TABLE produto (
     Vvenda_Produto DECIMAL(10, 2) NOT NULL,
     obs_Produto VARCHAR(200) NULL,
     status_Produto VARCHAR(20) NOT NULL,
+      img_Produto VARCHAR(100) NOT NULL,
     PRIMARY KEY (ID_Produto)
 );
 

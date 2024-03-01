@@ -13,7 +13,7 @@
     <?php include_once('excluir_usuario.php'); ?>
     <?php include_once('Pesquisar_usuario.php'); ?>
     <div class="container">
-        <form action="" method="post" class="form-control">
+        <form action="" method="post" class="form-control" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-sm-12">
                     <h1>Formulário de Usuário</h1>
@@ -26,11 +26,11 @@
                         <input type="number" id="id_usuario" name="id_usuario" class="form-control" value="<?= $id_usuario ?>">
                     </p>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-6">
                     <p>&nbsp;</p>
                     <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=usuario" name="Pesquisar">&#128269;</button>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-3">
                     <p>
                         <label for="nome_usuario">Nome do Usuário</label>
                         <input type="text" id="nome_usuario" name="Nome" class="form-control" value="<?= $nome_Usuario ?>">
@@ -58,7 +58,15 @@
                 </div>
             </div>
             <div class="row">
-                
+            <div class="col-sm-3">
+                    <p>
+                        <label for="txtImg">Foto Perfil</label>
+                        <input type="file" name="txtImg" id="txtImg" class="form-control" value="<?=$img_Usuario?>">
+                    </p> 
+                </div>
+                <div class="col-sm-3">
+                    <img src="imagens/<?=$id_usuario?>/<?=$img_Usuario?>" alt="" class="w-100">
+                </div>
                 <div class="col-sm-6">
                     <p>
                         <label for="status_usuario">Status</label>
