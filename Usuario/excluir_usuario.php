@@ -9,7 +9,7 @@ if (isset($_POST['Excluir'])) {
         $sql = $conn->prepare('DELETE FROM usuario WHERE id_usuario = :id_Usuario');
 
         $sql->execute(array(
-            ':id_Usuario' => $_POST['ID_Usuario']
+            ':id_Usuario' => $_POST['id_usuario']
         ));
 
         if ($sql->rowCount() > 0) {

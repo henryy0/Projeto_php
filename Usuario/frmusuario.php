@@ -85,7 +85,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=usuario">Cadastrar</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=usuario" onclick="return validateForm()">Cadastrar</button>
                     <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=usuario">Alterar</button>
                     <a href="frmUsuario.php" class="btn btn-secondary">Limpar</a>
                     <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=usuario">Excluir</button>
@@ -95,5 +95,42 @@
     </div>
 
     <script src="../js/bootstrap.js"></script>
+
+    <script>
+        function validateForm() {
+            var nomeUsuario = document.getElementById('nome_usuario').value;
+            var loginUsuario = document.getElementById('login_usuario').value;
+            var senhaUsuario = document.getElementById('senha_usuario').value;
+            var confirmSenha = document.getElementById('confirmar_senha').value;
+            var txtImg = document.getElementById('txtImg').value;
+
+            if (nomeUsuario === '') {
+                alert('Por favor, adicione um nome.');
+                return false;
+            }
+
+            if (loginUsuario === '') {
+                alert('Por favor, adicione um login.');
+                return false;
+            }
+
+            if (senhaUsuario === '') {
+                alert('Por favor, adicione uma senha.');
+                return false;
+            }
+
+            if (senhaUsuario !== confirmSenha) {
+                alert('As senhas não coincidem. Por favor, verifique.');
+                return false;
+            }
+
+            if (txtImg === '') {
+                alert('Por favor, selecione uma imagem.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>
