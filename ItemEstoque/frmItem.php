@@ -21,7 +21,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4">
+            <div class="col-sm-3">
+                <p>
+                    <label for="id_mov">ID do Item de Estoque</label>
+                    <input type="text" id="id_ItemEstoque" name="id_ItemEstoque" class="form-control">
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <p>&nbsp;</p>
+                <button name="Pesquisar" class="btn btn-primary" formaction="Sistema.php?tela=item" onclick="return validatePesquisa()">&#128269;</button>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
                     <p>
                         <label for="id_produto_ItemEstoque">ID Produto</label>
                     </p>
@@ -31,7 +43,7 @@
                         </select>
                     </p>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <p>
                         <label for="id_localEstoque_ItemEstoque">ID Local de Estoque</label>
                     </p>
@@ -41,7 +53,7 @@
                         </select>
                     </p>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <p>
                         <label for="status_os">Status</label>
                     </p>
@@ -75,5 +87,29 @@
     </div>
     
     <script src="../js/bootstrap.js"></script>
+
+    <script>
+        function validateForm() {
+            var obsOs = document.getElementById('obs_os').value;
+
+            if (obsOs === '') {
+                alert('Por favor, adicione uma observação.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function validatePesquisa() {
+            var idPesquisa = document.getElementById('id_ItemEstoque').value.trim();
+
+            if (idPesquisa === '') {
+                alert('Por favor, insira um ID para pesquisar.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>

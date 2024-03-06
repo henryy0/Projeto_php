@@ -23,6 +23,18 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-sm-3">
+                    <p>
+                        <label for="id_mov">ID da Movimentação de Estoque</label>
+                        <input type="number" id="id_mov" name="id_mov" class="form-control" value="<?= $id_mov ?>">
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <p>&nbsp;</p>
+                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=mov" name="Pesquisar" onclick="return validatePesquisa()">&#128269;</button>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-4">
                     <p>
                         <label for="id_Produto_mov">ID do Produto</label>
@@ -109,6 +121,17 @@
 
             if (obsMov === '') {
                 alert('Por favor, adicione uma observação.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function validatePesquisa() {
+            var idMov = document.getElementById('id_mov').value.trim();
+
+            if (idMov === '') {
+                alert('Por favor, insira um ID de Movimentação de Estoque para pesquisar.');
                 return false;
             }
 

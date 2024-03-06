@@ -16,8 +16,12 @@
     <div class="container">
         <form action="" method="post" class="form-control">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-9">
                     <h1>Formulário de Ordem de Serviço (OS)</h1>
+                </div>
+                <div class="col-sm-3">
+                <p>&nbsp;</p>
+                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=os" name="Pesquisar" onclick="return validatePesquisa()">&#128269;</button>
                 </div>
             </div>
             <div class="row">
@@ -104,6 +108,19 @@
 
             return true;
         }
+
+     
+        function validatePesquisa() {
+            var idOs = document.getElementById('id_produto_os').value.trim();
+
+            if (idOs === '') {
+                alert('Por favor, insira um ID de Ordem de Serviço (OS) para pesquisar.');
+                return false;
+            }
+
+            return true;
+        }
+
     </script>
 </body>
 </html>

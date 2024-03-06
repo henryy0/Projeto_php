@@ -87,7 +87,7 @@
                 <div class="col-sm-12 text-end">
                     <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=usuario" onclick="return validateForm()">Cadastrar</button>
                     <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=usuario">Alterar</button>
-                    <a href="frmUsuario.php" class="btn btn-secondary">Limpar</a>
+                    <a href="Sistema.php?tela=usuario" class="btn btn-secondary">Limpar</a>
                     <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=usuario">Excluir</button>
                 </div>
             </div>

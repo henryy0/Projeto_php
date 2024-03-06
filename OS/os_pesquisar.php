@@ -9,7 +9,7 @@ $status_os = "";
 if (isset($_POST['Pesquisar'])) {
     include_once('conexao.php');
     try {
-        $sql = $conn->query('SELECT * FROM OS WHERE id_os=' . $_POST['id_os']);
+        $sql = $conn->query('SELECT * FROM OS WHERE id_produto_os=' . $_POST['id_produto_os']);
 
         if ($sql->rowCount() > 0) {
             foreach ($sql as $linha) {
