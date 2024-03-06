@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-sm-6">
                     <p>&nbsp;</p>
-                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=usuario" name="Pesquisar">&#128269;</button>
+                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=usuario" name="Pesquisar" onclick="return validatePesquisa()">&#128269;</button>
                 </div>
                 <div class="col-sm-3">
                     <p>
@@ -103,6 +103,7 @@
             var senhaUsuario = document.getElementById('senha_usuario').value;
             var confirmSenha = document.getElementById('confirmar_senha').value;
             var txtImg = document.getElementById('txtImg').value;
+            var idUsuario = document.getElementById('id_usuario').value.trim();
 
             if (nomeUsuario === '') {
                 alert('Por favor, adicione um nome.');
@@ -126,6 +127,17 @@
 
             if (txtImg === '') {
                 alert('Por favor, selecione uma imagem.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function validatePesquisa() {
+            var idUsuario = document.getElementById('id_usuario').value.trim();
+
+            if (idUsuario === '') {
+                alert('Por favor, insira um ID de usuário para pesquisar.');
                 return false;
             }
 

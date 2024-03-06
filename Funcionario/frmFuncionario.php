@@ -30,8 +30,8 @@
                 </div>
                 <div class="col-sm-3">
                     <p>&nbsp;</p>
-                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=funcionario" name="Pesquisar">&#128269;</button>
-                </div>
+                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=funcionario" name="Pesquisar" onclick="return validatePesquisarFuncionario()">&#128269;</button>
+                </div> 
                 <div class="col-sm-3">
                     <p>
                         <label for="data_Funcionario">Data de Registro</label>
@@ -218,7 +218,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=funcionario">Cadastrar</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=funcionario" onclick="return validateForm()">Cadastrar</button>
                     <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=funcionario">Alterar</button>
                     <a href="Sistema.php?tela=funcionario" class="btn btn-secondary">Limpar</a>
                     <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=funcionario">Excluir</button>
@@ -228,5 +228,54 @@
     </div>
 
     <script src="../js/bootstrap.js"></script>
+
+    <script>
+        function validateForm() {
+            var dataRegistro = document.getElementById('data_Funcionario').value;
+            var nomeFuncionario = document.getElementById('nome_Funcionario').value;
+            var dataNascimento = document.getElementById('nasc_Funcionario').value;
+            var cpfFuncionario = document.getElementById('cpf_Funcionario').value;
+            var telefone1 = document.getElementById('telefone1_Funcionario').value;
+
+
+            if (dataRegistro === '') {
+                alert('Por favor, insira a Data de Registro.');
+                return false;
+            }
+
+            if (nomeFuncionario === '') {
+                alert('Por favor, insira o Nome do Funcionário.');
+                return false;
+            }
+
+            if (dataNascimento === '') {
+                alert('Por favor, insira a Data de Nascimento.');
+                return false;
+            }
+
+            if (cpfFuncionario === '') {
+                alert('Por favor, insira o CPF.');
+                return false;
+            }
+
+            if (telefone1 === '') {
+                alert('Por favor, insira pelo menos o Telefone 1.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function validatePesquisarFuncionario() {
+        var idFuncionario = document.getElementById('ID_Funcionario').value;
+
+        if (idFuncionario === '') {
+            alert('Por favor, insira o ID do Funcionário para pesquisar.');
+            return false;
+        }
+
+        return true;
+    }
+    </script>
 </body>
 </html>

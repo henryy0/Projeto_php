@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-sm-6">
                     <p>&nbsp;</p>
-                    <button class="btn btn-primary" type="submit" formaction="frmLocalEstoque.php" name="Pesquisar">&#128269;</button>
+                    <button class="btn btn-primary" type="submit" formaction="frmLocalEstoque.php" name="Pesquisar" onclick="return validatePesquisa()">&#128269;</button>
                 </div>
                 <div class="col-sm-3">
                     <p>
@@ -66,7 +66,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=local">Cadastrar</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=local" onsubmit="return validateForm()">Cadastrar</button>
                     <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=local">Alterar</button>
                     <a href="Sistema.php?tela=local" class="btn btn-secondary">Limpar</a>
                     <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=local">Excluir</button>
@@ -76,5 +76,35 @@
     </div>
     
     <script src="../js/bootstrap.js"></script>
+
+    <script>
+        function validateForm() {
+            var nomeLocalEstoque = document.getElementById('nome_LocalEstoque').value;
+            var obsLocalEstoque = document.getElementById('obs_LocalEstoque').value;
+
+            if (nomeLocalEstoque === '') {
+                alert('Por favor, insira um nome para o Local de Estoque.');
+                return false;
+            }
+
+            if (obsLocalEstoque === '') {
+                alert('Por favor, adicione uma observação.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function validatePesquisa() {
+            var idLocalEstoque = document.getElementById('ID_LocalEstoque').value;
+
+            if (idLocalEstoque === '') {
+                alert('Por favor, insira o ID do Local de Estoque para pesquisar.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>

@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-sm-3">
                     <p>&nbsp;</p>
-                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=produto" name="Pesquisar">&#128269;</button>
+                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=produto" name="Pesquisar" onclick="return validatePesquisa()">&#128269;</button>
                 </div>
                 <div class="col-sm-3">
                     <p>
@@ -77,15 +77,15 @@
                     <img src="produtos/<?=$id_Produto?>/<?=$img_Produto?>" alt="" class="w-100">
                 </div>
             </div>
-                <div class="col-sm-12">
-                    <p>
-                        <label for="obs_produto">Observação</label>
-                        <textarea id="obs_produto" name="Observacao" class="form-control" rows="5"><?= $obs_Produto ?></textarea>
-                    </p>
-                </div>
+            <div class="col-sm-12">
+                <p>
+                    <label for="obs_produto">Observação</label>
+                    <textarea id="obs_produto" name="Observacao" class="form-control" rows="5"><?= $obs_Produto ?></textarea>
+                </p>
+            </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=produto">Cadastrar</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=produto" onclick="return validateForm()">Cadastrar</button>
                     <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=produto">Alterar</button>
                     <a href="Sistema.php?tela=produto" class="btn btn-secondary">Limpar</a>
                     <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=produto">Excluir</button>
@@ -94,5 +94,53 @@
         </form>
     </div>
     <script src="../js/bootstrap.js"></script>
+
+    <script>
+        function validatePesquisa() {
+            var idProduto = document.getElementById('id_produto').value.trim();
+
+            if (idProduto === '') {
+                alert('Por favor, insira um ID de produto para pesquisar.');
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateForm() {
+            var nomeProduto = document.getElementById('nome_produto').value;
+            var quantidadeProduto = document.getElementById('qtde_produto').value;
+            var valorCusto = document.getElementById('vcusto_produto').value;
+            var valorVenda = document.getElementById('vvenda_produto').value;
+            var txtImg = document.getElementById('txtImg').value;
+
+            if (nomeProduto === '') {
+                alert('Por favor, adicione um nome para o produto.');
+                return false;
+            }
+
+            if (quantidadeProduto === '' || quantidadeProduto <= 0) {
+                alert('Por favor, adicione uma quantidade válida.');
+                return false;
+            }
+
+            if (valorCusto === '' || isNaN(parseFloat(valorCusto))) {
+                alert('Por favor, adicione um valor de custo válido.');
+                return false;
+            }
+
+            if (valorVenda === '' || isNaN(parseFloat(valorVenda))) {
+                alert('Por favor, adicione um valor de venda válido.');
+                return false;
+            }
+
+            if (txtImg === '') {
+                alert('Por favor, selecione uma imagem para o produto.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>

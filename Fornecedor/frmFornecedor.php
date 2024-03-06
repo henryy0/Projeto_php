@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-sm-3">
                     <p>&nbsp;</p>
-                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=fornecedor" name="Pesquisar">&#128269;</button>
+                    <button class="btn btn-primary" type="submit" formaction="Sistema.php?tela=fornecedor" name="Pesquisar" onclick="return validatePesquisar()">&#128269;</button>
                 </div>
             </div>
             <div class="row">
@@ -216,7 +216,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=fornecedor">Cadastrar</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=fornecedor" onclick="return validateForm()">Cadastrar</button>
                     <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=fornecedor">Alterar</button>
                     <a href="Sistema.php?tela=fornecedor" class="btn btn-secondary">Limpar</a>
                     <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=fornecedor">Excluir</button>
@@ -226,5 +226,54 @@
     </div>
 
     <script src="../js/bootstrap.js"></script>
+
+    <script>
+    function validateForm() {
+        var nomeFornecedor = document.getElementById('nome_Fornecedor').value;
+        var dataNascimento = document.getElementById('nasc_Fornecedor').value;
+        var cnpjFornecedor = document.getElementById('cnpj_Fornecedor').value;
+        var dataRegistro = document.getElementById('data_Fornecedor').value;
+        var telefone1 = document.getElementById('telefone1_Fornecedor').value;
+
+        if (nomeFornecedor === '') {
+            alert('Por favor, insira o Nome do Fornecedor.');
+            return false;
+        }
+
+        if (dataNascimento === '') {
+            alert('Por favor, insira a Data de Nascimento.');
+            return false;
+        }
+
+        if (cnpjFornecedor === '') {
+            alert('Por favor, insira o CNPJ.');
+            return false;
+        }
+
+        if (dataRegistro === '') {
+            alert('Por favor, insira a Data de Registro.');
+            return false;
+        }
+
+        if (telefone1 === '') {
+            alert('Por favor, insira pelo menos o Telefone 1.');
+            return false;
+        }
+
+        return true;
+    }
+
+    function validatePesquisar() {
+        var idFornecedor = document.getElementById('ID_Fornecedor').value;
+
+        if (idFornecedor === '') {
+            alert('Por favor, insira o ID do Fornecedor para pesquisar.');
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
 </body>
 </html>

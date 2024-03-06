@@ -86,7 +86,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=mov">Cadastrar</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=mov" onsubmit="return validateForm()">Cadastrar</button>
                     <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=mov">Alterar</button>
                     <a href="Sistema.php?tela=mov" class="btn btn-secondary">Limpar</a>
                     <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=mov">Excluir</button>
@@ -96,5 +96,24 @@
     </div>
 
     <script src="../js/bootstrap.js"></script>
+
+    <script>
+        function validateForm() {
+            var quantidadeMov = document.getElementById('qtde_mov').value;
+            var obsMov = document.getElementById('obs_mov').value;
+
+            if (quantidadeMov === '' || quantidadeMov <= 0) {
+                alert('Por favor, insira uma quantidade válida.');
+                return false;
+            }
+
+            if (obsMov === '') {
+                alert('Por favor, adicione uma observação.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>

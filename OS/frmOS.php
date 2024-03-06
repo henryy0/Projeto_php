@@ -70,7 +70,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-end">
-                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=os">Cadastrar</button>
+                    <button name="Cadastrar" class="btn btn-primary" formaction="Sistema.php?tela=os" onsubmit="return validateForm()">Cadastrar</button>
                     <button name="Alterar" class="btn btn-success" formaction="Sistema.php?tela=os">Alterar</button>
                     <a href="Sistema.php?tela=os" class="btn btn-secondary">Limpar</a>
                     <button name="Excluir" class="btn btn-danger" formaction="Sistema.php?tela=os">Excluir</button>
@@ -80,5 +80,30 @@
     </div>
 
     <script src="../js/bootstrap.js"></script>
+
+    <script>
+        function validateForm() {
+            var dataOs = document.getElementById('data_os').value;
+            var quantidadeOs = document.getElementById('qtde_os').value;
+            var obsOs = document.getElementById('obs_os').value;
+
+            if (dataOs === '') {
+                alert('Por favor, selecione a data da OS.');
+                return false;
+            }
+
+            if (quantidadeOs === '' || quantidadeOs <= 0) {
+                alert('Por favor, insira uma quantidade válida.');
+                return false;
+            }
+
+            if (obsOs === '') {
+                alert('Por favor, adicione uma observação.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>
